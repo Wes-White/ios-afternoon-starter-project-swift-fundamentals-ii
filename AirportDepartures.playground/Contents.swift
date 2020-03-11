@@ -92,7 +92,7 @@ myBoard.flights.append(Flight(name: "2106", destination: "Los Angeles",  airline
 
 myBoard.flights.append(Flight(name: "2102", destination: "New York", airline: "American",terminal: "7", status: FlightStatus.Canceled))
 
-myBoard.flights.append(Flight(name: "2114", destination: "Las Vegas", airline: "American", departureTime: Calendar.current.date(from: DateComponents(timeZone: .current, month: 03, day: 11, hour: 16, minute: 20)), terminal: "16", status: FlightStatus.OnTime))
+myBoard.flights.append(Flight(name: "2114", destination: "Las Vegas", airline: "American", departureTime: Calendar.current.date(from: DateComponents(timeZone: .current, year: 2020, month: 03, day: 13, hour: 16, minute: 20)), terminal: "16", status: FlightStatus.OnTime))
 
 
 //: ## 3. Create a free-standing function that can print the flight information from the `DepartureBoard`
@@ -133,7 +133,7 @@ func printDeparturesBoard2(departureBoard: DepartureBoard){
         if let departureTime = flights.departureTime {
             departureString = "\(departureTime)"
         }
-        print("Flight Name: \(flights.name) Destination: \(flights.destination) Departure Time: \(String(describing: flights.departureTime)) Terminal : \(String(describing: flights.terminal)) Status: \(flights.status.rawValue) ")
+        print("Flight Name: \(flights.name) Destination: \(flights.destination) Departure Time: \(departureString) Terminal : \(String(describing: flights.terminal)) Status: \(flights.status.rawValue) ")
     }
 }
 printDeparturesBoard2(departureBoard: myBoard)
