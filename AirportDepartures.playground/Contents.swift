@@ -27,13 +27,13 @@ enum FlightStatus: String {
 
 
 
-struct Airport{
+struct Airport {
     let name: String
     let location: String
     
 }
 
-struct Flight{
+struct Flight {
     var name: String
     var destination: String
     var airline: String
@@ -175,15 +175,16 @@ myBoard.alertPassengers()
 //:
 //: f. Stretch: Use a [`NumberFormatter`](https://developer.apple.com/documentation/foundation/numberformatter) with the `currencyStyle` to format the amount in US dollars.
 func calculateAirfare(checkedBags: Int, distance: Int, travlers: Int) -> Double {
-    var bagFair = checkedBags * 25
-    var totalFair: Double = Double((bagFair + distance) * travlers)
+    let bagFair: Double = Double(checkedBags * 25)
+    let travel = Double(distance) * 0.10
+    let totalFair: Double = (bagFair + travel) * Double(travlers)
     
     return totalFair
 }
 
-calculateAirfare(checkedBags: 1, distance: 100, travlers: 1)//125
-calculateAirfare(checkedBags: 4, distance: 2500, travlers: 2)// 5200
-calculateAirfare(checkedBags: 4, distance: 1000, travlers: 3)// 3300
+calculateAirfare(checkedBags: 1, distance: 100, travlers: 1)//35
+calculateAirfare(checkedBags: 4, distance: 2500, travlers: 2)// 700
+calculateAirfare(checkedBags: 4, distance: 1000, travlers: 3)// 600
 
 
 
